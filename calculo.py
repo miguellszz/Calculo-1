@@ -1,33 +1,51 @@
 import sympy as sp
-#Para calcular a derivada de uma função com SymPy, você pode usar o método diff(). Por exemplo, se 
-#quiséssemos calcular a derivada da função \(f(x) = x^2\), o código seria algo como diff(x**2, x), onde x é 
-#uma variável previamente definida como um símbolo do SymPy. Este método é incrivelmente flexível, permitindo 
-#cálculos de derivadas de ordens superiores apenas adicionando um parâmetro adicional.
-print("Olá Seja Bem Vindo ao programa de Cálculo!")
-print("------ ESSE É O MENU PRINCIPAL ------")
-print("ESCOLHA QUAL PERGUNTA VOCE DESEJA OBTER A RESPOSTA:\n 1 - f(x)=(3x^2+2x+1)\n 2 - \n 3 - ")
+import math as m
+from sympy import sin,cos, tan,Expr,ln,log,abc
+#Simbolos Utilizados:
+x,t,n,e = sp.symbols("x,t,n,e")
 
-opcao = int(input("Digite o número correspondente a sua pergunta: "))
-x = sp.symbols('x')
-resultado_1 = sp.diff((3*x**2 + 2*x + 1), x)
-resultado_2 = ""
-resultado_3 = ""
+#REGRA DA POTENCIA A
+funcao_po = 3*n**5 + 7*n**2 + 10
+derivada_po = sp.diff(funcao_po,n)
+resultado_po = derivada_po.subs(n, 100)
+print(f"O valor da operaçao C{funcao_po} é: {resultado_po}")
+
+#regra do quociente C: diff(x**2 / sin(x), x) 
+funcao_q = 5*x / (100-x)
+derivada_q = sp.diff(funcao_q, x)
+resultado_po = derivada_q.subs(x, 50)
+
+print(f"O Resultado da operaçao {funcao_q} é: {resultado_po}")
+
+#Trigonometria D
+funcao_t = 4 * cos(t) - 3 * sin(t)
+derivada_t = sp.diff(funcao_t, t)
+resultado_t = derivada_t
+
+print(f"O resultado da Operação {funcao_t} é {resultado_t}")
+
+#exponecial simples E:
+funcao_es = sp.exp (-x)
+derivada_es = sp.diff (funcao_es, x)
+resultado_es = derivada_es
+print(f"O resultado da operaçao {funcao_es} é: {resultado_es}")
 
 
-while opcao != 1 and opcao != 2 and opcao != 3:
-    print("Opção inválida. Por favor, escolha uma opção válida.")
-    opcao = int(input("Digite o número correspondente a sua pergunta: "))
+#Logaritimica F: 
+funcao_log = 10* sp.ln (t)
+derivada_log = sp.ln(funcao_log, t)
+resultado_log = derivada_log
+print(f"O resultado da Operaçao {funcao_log} é: {resultado_log}")
 
-if opcao == 1:
-    print("Você escolheu a opção 1")
-    print(f"A resposta da questão 1 é: {resultado_1}\n")
-elif opcao ==2:
-    print("Você escolheu a opção 2")
-    print(f"A resposta da questão 2 é: {resultado_2}\n")
-elif opcao ==3:
-    print("Você escolheu a opção 3")
-    print(f"A resposta da questão 3 é: {resultado_3}\n")
-else:
-    print("Opção inválida.")
+#Regra da Cadeia exponecial H: 
+funcao_ce = 5**(2*t**2 - 1)
+dAdT_ce = sp.diff(funcao_ce, t)
+resultado_ce = dAdT_ce
+print(f"O Resultado da operação {funcao_ce} é: {resultado_ce}")
 
-print(f"OBRIGADO POR UTILIZAR O PROGRAMA DE CÁLCULO!")
+#Regra da Cadeia Logaritmica I:
+
+funcao_cl = sp.ln(n**3 + 5*n)
+dTdN_cl = sp.diff(funcao_cl,n)
+resultado_cl = dTdN_cl
+print(f"O Resultado da operação {funcao_cl} é {resultado_cl}")
