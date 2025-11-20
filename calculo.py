@@ -34,7 +34,7 @@ match opcao_c: #Letras
         resultado_po = derivada_po.subs(n, 100)
         print(f"O valor da operaçao C{funcao_po} é: {resultado_po}")
     case "C":
-        print(f"\nUm especialista em redes de computadores está modelando a latência média (L(r)) de um pacote de dados em uma fila de roteador, onde aé a taxa de chegada de pacotes. \nA função que modela essa latênciaé L(π),onde 0≤π< 100.\nQuestão: Determine a taxa de variaçao instantanea da latencia em relaçäo à taxa de chegada de pacotes, calculando a derivada dLdX. Qual o valor dessa taxa quando a taxa de chegada depacotes é π =50?\n")
+        print(f"\nUm especialista em redes de computadores está modelando a latência média (L(r)) de um pacote de dados em uma fila de roteador, onde aé a taxa de chegada de pacotes. \nA função que modela essa latênciaé L(π),onde 0≤π< 100.\nQuestão: Determine a taxa de variaçao instantanea da latencia em relaçäo à taxa de chegada de pacotes, calculando a derivada dL/dX. Qual o valor dessa taxa quando a taxa de chegada depacotes é π =50?\n")
 
         funcao_q = 5*x / (100-x)
         derivada_q = sp.diff(funcao_q, x)
@@ -42,42 +42,43 @@ match opcao_c: #Letras
 
         print(f"O Resultado da operaçao {funcao_q} é: {resultado_q}")
     case "D":
-        print(f"\n No desenvolvimento de gráficos de computador (computer graphics), a posição de um objeto em movimento periódico, como uma câmera oscilante, pode ser\n descrita por funçõestrigonométricas. Suponha que a coordenada vertical y da\n câmera seja dada por y(t)=4 cos(t)- 3sen(t),onde té o tempo. Questão: Calcule a função que descreve a velocidade vertical instantânea da camera, v(t)-\n")
+        print(f"\n No desenvolvimento de gráficos de computador (computer graphics), a posição de um objeto em movimento periódico, como uma câmera oscilante, pode ser\n descrita por funçõestrigonométricas. Suponha que a coordenada vertical y da\n câmera seja dada por y(t)=4 cos(t)- 3sen(t),onde té o tempo. \nQuestão: Calcule a função que descreve a velocidade vertical instantânea da camera, v(t)-dY/dT\n")
+
         funcao_t = 4 * cos(t) - 3 * sin(t)
         derivada_t = sp.diff(funcao_t, t)
         resultado_t = derivada_t
 
         print(f"O resultado da Operação {funcao_t} é {resultado_t}")
+    case "E":
+        print(f"\n Em aprendizado de máquina (Machine Learning), a função sigmoide,f()=HHa-,é crucial para introduzir não-linearidade em redes neurais. \nA derivada dessa função é essencial para o algoritmo de backpropagation. Considere o componente e-. \nQuestão: Calcule a derivada da função g(ar)= e-t.\n")
 
-"""#Trigonometria D
-funcao_t = 4 * cos(t) - 3 * sin(t)
-derivada_t = sp.diff(funcao_t, t)
-resultado_t = derivada_t
+        funcao_es = sp.exp (-x)
+        derivada_es = sp.diff (funcao_es, x)
+        resultado_es = derivada_es
 
-print(f"O resultado da Operação {funcao_t} é {resultado_t}")
+        print(f"O resultado da operaçao {funcao_es} é: {resultado_es}")
+    case "F":
+        print(f"\n Em teoria da informação, a quantidade de informação ou entropia muitas vezes envolve logaritmos naturais. Suponha que o desperdicio de memória em um algoritmo de compressão seja modelado pela funçao M(t)= 10ln(t),onde t é a compelixidade de tempo de compressão. \nQuestão: Calcule a taxa de variação instantânea do desperdicio de memoria em relação à   \ncomplexidade de tempo,dM/dT.\n")
 
-#exponecial simples E:
-funcao_es = sp.exp (-x)
-derivada_es = sp.diff (funcao_es, x)
-resultado_es = derivada_es
-print(f"O resultado da operaçao {funcao_es} é: {resultado_es}")
+        funcao_log = 10* sp.ln (t)
+        derivada_log = sp.ln(funcao_log, t)
+        resultado_log = derivada_log
 
+        print(f"O resultado da Operaçao {funcao_log} é: {resultado_log}")
+    case "H":
+        print(f"\nEm modelagem de crescimento de virus (em software ou biologico) ou em modelagem de falha de hardware, o tempo medio entre falhas (MTBF)pode ter um\n comportamente exponecial. \nConsidere a função A(t) = 5^2t^2-1, que modela a area de influencia de um malware apos o tempo t\nQuestão: determine a taxa de crescimento instantanea da area de influencia do malware, dA/dt")
 
-#Logaritimica F: 
-funcao_log = 10* sp.ln (t)
-derivada_log = sp.ln(funcao_log, t)
-resultado_log = derivada_log
-print(f"O resultado da Operaçao {funcao_log} é: {resultado_log}")
+        funcao_ce = 5**(2*t**2 - 1)
+        dAdT_ce = sp.diff(funcao_ce, t)
+        resultado_ce = dAdT_ce
 
-#Regra da Cadeia exponecial H: 
-funcao_ce = 5**(2*t**2 - 1)
-dAdT_ce = sp.diff(funcao_ce, t)
-resultado_ce = dAdT_ce
-print(f"O Resultado da operação {funcao_ce} é: {resultado_ce}")
+        print(f"O Resultado da operação {funcao_ce} é: {resultado_ce}")
+    case "I":
+        print(f"\nNa otimização de consultas em banco de dados, o tempo de busca em uma \nestrutura de dados balanceada (como uma árvore B)é proporcional ao logaritmo do\n número de registros. A complexidade de tempo de uma nova operaçãoé modelada por T(n)=ln(n3+5n). \nQuestão: Calcule a taxa de variação da complexidade de tempo em relação ao número de registros n,%. \n")
 
-#Regra da Cadeia Logaritmica I:
+        funcao_cl = sp.ln(n**3 + 5*n)
+        dTdN_cl = sp.diff(funcao_cl,n)
+        resultado_cl = dTdN_cl
 
-funcao_cl = sp.ln(n**3 + 5*n)
-dTdN_cl = sp.diff(funcao_cl,n)
-resultado_cl = dTdN_cl
-print(f"O Resultado da operação {funcao_cl} é {resultado_cl}")"""
+        print(f"O Resultado da operação {funcao_cl} é {resultado_cl}")
+
