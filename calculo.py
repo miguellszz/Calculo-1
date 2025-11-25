@@ -3,6 +3,7 @@ import math as m
 from sympy import sin,cos, tan,Expr,ln,log,abc,tan
 
 #Simbolos Utilizados:
+#RQ = RAIZ QUADRADA
 x,t,n,e,r,T,P,u,tg = sp.symbols("x,t,n,e,r,T,P,u,tg")
 pi = sp.pi
 letras = ("ABCDEFGHIJKLMNOP")
@@ -165,12 +166,113 @@ match opcao:
     case 2:
         print("\nVocê escolheu a questão 2. Informe qual letra gostaria de obter o resultado (A até O):\n")
         opcao_c = input("Digite a letra correspondente: ").upper()  # Upper para transformar em maiúscula
-        while opcao_c < "A" or opcao_c > "I" or len(opcao_c) != 1: #Validaçao das letras
+        while opcao_c < "A" or opcao_c > "O" or len(opcao_c) != 1: #Validaçao das letras
             print("Letra inválida!")
             opcao_c = input("Digite a letra válida: ").upper()
         match opcao_c:
             case "A":
-                print("")
+                print("Em um sistema de moivmentação de robos, a posicao é s(x) = x^2-25 (x --> 5)")
+                funcao_A = (x**2 - 25) / (x-5)
+                limite_A = sp.limit(funcao_A,x, 5)
+                resultado_A = limite_A
+                print(f"O Resultado da sua expressão é:{resultado_A}")
+
+            case "B":
+                print(f"Um sensor optico mede a intensidade I(x) = RQ(x+4). Calcular limite (x-->0) (RQ(x+4)-2)/x ")
+                funcao_B = (sp.sqrt(x + 4) - 2) / x
+                limite_B = sp.limit(funcao_B,x,0)
+                resultado_B = limite_B
+                print(f"O Resultado da Operação é:{resultado_B}")
+
+            case "C":
+                print("Um sinal eletrico é modelado por f(x) = sin(4x). Calcular limite (x-->0) (sin(4x))/x")
+                funcao_C = sp.sin(4*x) / x
+                limite_C = sp.limit(funcao_C,x,0)
+                resultado_C = limite_C
+                print(f"O Resultado da Operação é:{resultado_C}")
+
+            case "D":
+                print("Analisar o crescimento inicial da funçãoT(x)= e^x-1. Calcular limite (x-->0) (e^x-1)/x")
+                funcao_D = (sp.exp(x) - 1) / x 
+                limite_D = sp.limit(funcao_D,x,0)
+                resultado_D = limite_D
+                print(f"O Resultado da Operação é:{resultado_D}")
+
+            case "E":
+                print("Comparar o crescimento de RQx em relação a x. Calcular limite (x-->oo) (RQx)/x")
+                funcao_E = sp.sqrt(x) / x
+                limite_E = sp.limit(funcao_E,x,sp.oo)
+                resultado_E = limite_E
+                print(f"O Resultado da Operação é:{resultado_E}")
+
+            case "F":
+                print("Analisar o decaimento do sinal I(x) = e^x. Calcular limite (x-->oo) e^x")
+                funcao_F = sp.exp(-x)
+                limite_F = sp.limit(funcao_F,x,sp.oo)
+                resultado_F = limite_F
+                print(f"O Resultado da Operação é:{resultado_F}")
+
+            case "G":
+                print("Força F(x) = 1/3 em colisoes. Calcular limite (x --> oo) 1/x")
+                funcao_G = 1 / x
+                limite_G = sp.limit(funcao_G,x,sp.oo)
+                resultado_G = limite_G
+                print(f"O Resultado da Operação é:Diverge(não existe limite finito)")
+
+            case "H":    
+                print("Analisar ln(x) para pacotes pequenos. Calcular limite (x-->0+) ln(x)")
+                funcao_H = sp.ln(x)
+                limite_H = sp.limit(funcao_H,x,0,dir="+")
+                resultado_H = limite_H
+                print(f"O Resultado da Operação é:{resultado_H}")
+
+            case "I":
+                print("Osilação s(x) = sin(x). Calcular limite (x-->oo) sin(x)/x")
+                funcao_I = sp.sin(x) / x
+                limite_I = sp.limit(funcao_I,x,sp.oo)
+                resultado_I = limite_I
+                print(f"O Resultado da Operação é:{resultado_I}")
+
+            case "J":
+                print("Comparar custos C_A = x^3+3x e C_B = 2x^3 - 5. Calcular limite (x-->oo) (x^3+3x)/(2x^3-5)")
+                funcao_J = (x**3 + 3*x) / (2*x**3 - 5)
+                limite_J = sp.limit(funcao_J,x,sp.oo)
+                resultado_J = limite_J
+                print(f"O Resultado da Operação é:{resultado_J}")
+            case "K":
+                print("Entropia de eventos raros: x ln(x). Calcular limite (x-->oo) x ln(x)")
+                funcao_K = x * sp.ln(x)
+                limite_K = sp.limit(funcao_K,x,0,dir="+")
+                resultado_K = limite_K
+                print(f"O Resultado da Operação é:{resultado_K}")
+
+            case "L":
+                print("Distancia entre curvas: RQ(x^2+x) - x. Calcular limite (x-->0) RQ(x^2+x) - /x")
+                funcao_L = sp.sqrt(x**2 + x) - x
+                limite_L = sp.limit(funcao_L,x,sp.oo)
+                resultado_L = limite_L
+                print(f"O Resultado da Operação é:{resultado_L}")
+
+            case "M":
+                print("Juros compostos: (1+1/x)^x. Calcular limite (x-->oo) (1+1/n)^x")
+                funcao_M = (1 + 1/x)**x
+                limite_M = sp.limit(funcao_M,x,sp.oo)
+                resultado_M = limite_M
+                print(f"O Resultado da Operação é:{resultado_M}")
+
+            case "N":
+                print("Probabilidades raras: x^x. Calcular limite (x-->0+) x^x")
+                funcao_N = x**x
+                limite_N = sp.limit(funcao_N,x,0,dir="+")
+                resultado_N = limite_N
+                print(f"O Resultado da Operação é:{resultado_N}")
+
+            case "O": 
+                print("Crescimento desacelerado: x^(1/x). Calcular limite (x-->oo) x^(1/x)")
+                funcao_O = x**(1/x)
+                limite_O = sp.limit(funcao_O,x,sp.oo)
+                resultado_O = limite_O
+                print(f"O Resultado da Operação é:{resultado_O}")
 
 #Integrais:
 match opcao:
